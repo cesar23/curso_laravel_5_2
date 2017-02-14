@@ -257,7 +257,7 @@ function showMessage(message,segundos) {
 
 
 
-{!! Form::open(['url' => 'admin/usuarios/10','method' => 'put', 'files' => true,'class' => 'bordered-row','id' => 'formulario','name' => 'formulario','role' => 'form']) !!}
+{!! Form::open(['url' => 'admin/usuarios/'.$entidad->id,'method' => 'put', 'files' => true,'class' => 'bordered-row','id' => 'formulario','name' => 'formulario','role' => 'form']) !!}
 
 
 <!-- <input name="_token" type="hidden" value="{{ csrf_token() }}"> -->

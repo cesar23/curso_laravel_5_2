@@ -454,32 +454,7 @@
 
                      //Script para poner active el menu
                      $(document).ready(function () {
-                        var activo_search = 0;
-                        //recorrer- todos las etiquetas de los enlaces
-                        $(".sidebar-menu li a").each(function (index) {
-                            var valor_href = this.valueOf();
-                            var url_actual = '<?php echo $actual_link?>';
-
-                            //console.log("index:"+index+"  text:"+this.valueOf());
-
-                            //si el valor de href es igual al actual entra aqui para pintarlos
-                            //if(this.valueOf()=='<?php //echo $actual_link?>'){
-                            if (url_actual.indexOf(valor_href) != -1) {//si no esta vacio
-                                //console.log("estas en :"+this.valueOf());
-                                //le ponemos la clase al padre de la etiqueta a
-                                $(this.parentNode).addClass('active');
-                                padre_ul = $(this.parentNode).parent();// con esto cogemos el padre ul
-                                $(padre_ul).parent().addClass('active');//y le decimos agrga la  clase al padre
-
-
-                                activo_search = 1;
-                            }
-
-
-                        });
-                        if (activo_search == 0) {
-                            $('#home_li').addClass('active');
-                        }
+                   
                     });
 
                 </script>
@@ -499,14 +474,14 @@
                     <li id="recurso_categorias" class="treeview">
                         <a href="#">
                             <i class="fa fa-reorder"></i>
-                            <span>Categorias</span>
+                            <span>Usuarios</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="<?php echo BASE_URL ?>tienda/categorias/agregar"
-                             title="Agregar">
-                             <span>Agregar</span></a></li>
-                             <li><a href="<?php echo BASE_URL ?>tienda/categorias/listar"                                    title="Listar">                                    <span>Listar</span></a></li>                        </ul>                    </li>
+                            <li><a href="<?php echo BASE_URL ?>admin/usuarios"
+                             title="listar">
+                             <span>listar</span></a></li>
+                             <li><a href="<?php echo BASE_URL ?>admin/usuarios/create"                                    title="agregar">                                    <span>agregar</span></a></li>                        </ul>                    </li>
                              <li id="recurso_menu" class="treeview ">
                                 <a href="#">
                                     <i class="fa fa-sitemap"></i>
@@ -1128,14 +1103,14 @@ $.confirm({
     <script src="/assets_admin_lte/plugins/sweetalert/js/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets_admin_lte/plugins/sweetalert/css/sweetalert.css">
 <script>
- $(function () {
-    swal({
-  title: "Error!",
-  text: "Here's my error message!",
-  type: "error",
-  confirmButtonText: "Cool"
-});
-    });
+//  $(function () {
+//     swal({
+//   title: "Error!",
+//   text: "Here's my error message!",
+//   type: "error",
+//   confirmButtonText: "Cool"
+// });
+//     });
 </script>
 
 </body>
