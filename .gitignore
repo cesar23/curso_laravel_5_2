@@ -9,7 +9,7 @@
 
 
 # Ignora las carpetas pesadas de configuracion
-/vendor
+/vendor/*
 /node_modules
 /public/storage
 #.env
