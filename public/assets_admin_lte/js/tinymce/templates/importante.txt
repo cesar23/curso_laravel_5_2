@@ -1,0 +1,5 @@
+las plantillas las cree copiado  contenido html en el blooger y luego los copie dentro de un html
+dentro del div
+
+<div class="mceTmpl">
+</div>

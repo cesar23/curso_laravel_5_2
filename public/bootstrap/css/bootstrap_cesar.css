@@ -1,0 +1,10 @@
+/* centramos un div
+<div class="row">
+    <div class="col-lg-1 col-centered"></div>
+</div>
+*/
+.col-centered{
+    float: none;
+    margin: 0 auto;
+    /*text-align: center;*/
+}

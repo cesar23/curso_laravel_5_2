@@ -1,0 +1,284 @@
+html, body {
+    font-family: Verdana,sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+/*----------------------------Popup suscripcion -----------*/
+@font-face {
+    font-family: "porto";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/assets_admin_lte/fonts/porto/porto.eot?43147562#iefix") format("embedded-opentype"),
+    url("/assets_admin_lte/fonts/porto/porto.woff?43147562") format("woff"),
+    url("/assets_admin_lte/fonts/porto/porto.ttf?43147562") format("truetype"),
+    url("/assets_admin_lte/fonts/porto/porto.svg?43147562#porto") format("svg");
+}
+
+
+
+.fancybox-wrap,
+.fancybox-wrap * {
+    transition: initial;
+    -webkit-transition: initial
+}
+
+#fancybox-link {
+    display: none;
+    line-height: 25px;
+    height: 25px;
+    padding: 0px 10px;
+    border: solid 1px #ccc;
+    z-index: 30000;
+    position: relative;
+    background: #fff;
+    text-decoration: none;
+    position: absolute;
+    right: 0px;
+    bottom: 0px
+}
+
+.layered-navigation-swatch {
+    display: block;
+    float: left;
+    width: 20px;
+    margin-right: 5px
+}
+
+a.fancybox-close {
+    background: transparent;
+    transition: all 0.2s;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    top: 0;
+    right: 0;
+    font-size: 15px
+}
+
+/*boa 12/19 - color, opacity*/
+a.fancybox-close.fancybox-newsletter-close {
+    top: 10px;
+    right: 10px
+}
+
+a.fancybox-close:before {
+    content: "\e82c";
+    font-family: "porto"
+}
+
+a.fancybox-close:hover {
+    text-decoration: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65)
+}
+
+/*boa 12/19 - color, opacity*/
+.fancybox-opened .fancybox-skin {
+    border-radius: 5px;
+    overflow: hidden
+}
+
+#fancybox-loading {
+    background: none
+}
+
+.block-reorder input.checkbox {
+    position: absolute;
+    left: 0
+}
+
+.block-reorder .block-content ol li.item {
+    position: relative;
+    padding-left: 25px
+}
+
+#suscripcion_popup {
+    background: url(/assets_admin_lte/images/newsletter_popup_bg.jpg) no-repeat;
+     margin: 0px 0px 0px 0px;
+    padding: 10px 28px 25px;
+    /*padding: 0px 0px 0px;*/
+    width: 700px;
+    height: 320px;
+    border-top: 4px solid #08c;
+    text-align: left;
+    position: relative
+
+}
+
+#suscripcion_popup .block-content {
+    max-width: 312px;
+    text-align: center
+}
+
+#suscripcion_popup h2 {
+    font-weight: 700;
+    color: #313131;
+    font-size: 16px;
+    line-height: 1;
+    margin: 30px 0 12px
+}
+
+#suscripcion_popup p {
+    font-size: 13px;
+    line-height: 1.4
+}
+
+#suscripcion_popup .input-box {
+    padding: 0
+}
+
+#suscripcion_popup input.input-text {
+    float: left;
+    padding: 2px 13px;
+    line-height: 30px;
+    width: 100%
+}
+
+#suscripcion_popup button.button {
+    float: left;
+    margin-left: -55px;
+    position: relative;
+    z-index: 1;
+    width: 55px;
+    border-left: 1px solid #ccc
+}
+
+#suscripcion_popup button.button span {
+    height: 34px;
+    background-color: transparent;
+    color: #555;
+    line-height: 34px;
+    padding: 0;
+    text-align: center
+}
+
+#suscripcion_popup .subscribe-bottom {
+    position: absolute;
+    bottom: 30px
+}
+
+#suscripcion_popup .subscribe-bottom label {
+    font-size: 11px
+}
+
+.fancybox-prev span, .fancybox-next span {
+    background-image: none;
+    font-size: 40px;
+}
+
+.fancybox-prev span:before, .fancybox-next span:before {
+    font-family: "porto";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 40px;
+}
+
+.fancybox-next span:before {
+    content: '\e81a'
+}
+
+.fancybox-prev span:before {
+    content: '\e819'
+}
+
+#loading_mask_loader {
+    display: none
+}
+
+@media screen and(-ms-high-contrast: active),(-ms-high-contrast: none) {
+    .rating-box {
+        width: 65px;
+        height: 12px;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -999em;
+        overflow: hidden;
+        position: relative
+    }
+
+    .rating-box:before {
+        font-family: "porto";
+        content: "\e852\20\e852\20\e852\20\e852\20\e852";
+        width: 65px;
+        height: 12px;
+        color: #ddd;
+        display: inline;
+        font-size: 11px;
+        line-height: 12px;
+        white-space: nowrap
+    }
+
+    .rating-box .rating {
+        float: left;
+        height: 12px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden
+    }
+
+    .rating-box .rating:before {
+        font-family: "porto";
+        content: "\e852\20\e852\20\e852\20\e852\20\e852";
+        width: 65px;
+        height: 12px;
+        color: #ffc600;
+        display: inline;
+        font-size: 11px;
+        line-height: 12px;
+        white-space: nowrap
+    }
+}
+
+/*----------------------------fin Popup suscripcion -----------*/
+.error {
+    color: #dd4b39;
+}
+
+.ocultar {
+    display: none;
+}
+
+.fila_pendiente {
+    color: #2d2f2f;
+    background-color: #fdffd8;
+
+}
+
+.fila_entregado {
+    color: #2d2f2f;
+    background-color: #b6ffb0;
+
+}
+
+.fila_anulado {
+    color: #6e696c;
+    background-color: #b8bbbb;
+
+}
+
+.fila_warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    /*background-image: url('warning.png');*/
+}
+
+@media only screen and (max-width: 600px) {
+    .table_mostrar_scroll_xs {
+
+        max-width: 600px;
+        overflow: auto;
+
+    }
+}
