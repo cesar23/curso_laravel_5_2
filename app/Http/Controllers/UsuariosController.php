@@ -22,7 +22,9 @@ class UsuariosController extends Controller
         $listado=Usuario::orderBy('id','ASC')->paginate(3);
         //$results = DB::select('select * from usuarios where id_usuario = 1');
         //dd($usuarios);
-        return view('admin.usuarios.index', ['listado' => $listado]);
+         $data['listado']=$listado;
+        $data['titulo']="Listado de Usuarios";
+        return view('admin.usuarios.index', $data);
         //return "ola";
     }
 

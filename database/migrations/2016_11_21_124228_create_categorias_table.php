@@ -50,6 +50,17 @@ class CreateCategoriasTable extends Migration
      $articulo->meta_keywords="noticias,peru,rpp,el comercio";
      $articulo->active=1;  
      $articulo->save();
+
+      $articulo= new App\Categoria();
+     $articulo->id_parent=1;
+     $articulo->id_usuario=1;
+     $articulo->title="Publicaciones";
+     $articulo->title_url="publicaciones";
+     $articulo->imagen=NULL;
+     $articulo->descripcion="Noticias del dia en Peru,lima";
+     $articulo->meta_keywords="noticias,peru,rpp,el comercio";
+     $articulo->active=1;  
+     $articulo->save();
         
     }
 

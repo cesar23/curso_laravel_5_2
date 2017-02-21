@@ -31,6 +31,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title','Default') - Administrador</title>
     <meta name="robots" content="noindex" />
+    <link rel="apple-touch-icon" href="/favicon.png">
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -471,6 +472,7 @@
                         </a>
 
                     </li>
+                    <!-- Usuarios -->
                     <li id="recurso_categorias" class="treeview">
                         <a href="#">
                             <i class="fa fa-reorder"></i>
@@ -481,7 +483,37 @@
                             <li><a href="<?php echo BASE_URL ?>admin/usuarios"
                              title="listar">
                              <span>listar</span></a></li>
-                             <li><a href="<?php echo BASE_URL ?>admin/usuarios/create"                                    title="agregar">                                    <span>agregar</span></a></li>                        </ul>                    </li>
+                             <li><a href="<?php echo BASE_URL ?>admin/usuarios/create"                                    title="agregar">                                    <span>agregar</span></a></li>                        
+                             </ul>
+                             </li>
+                        <!-- Categorias -->
+                            <li id="recurso_categorias" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-reorder"></i>
+                            <span>Categorias</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="<?php echo BASE_URL ?>admin/categorias"
+                             title="listar">
+                             <span>listar</span></a></li>
+                             <li><a href="<?php echo BASE_URL ?>admin/categorias/create"                                    title="agregar">                                    <span>agregar</span></a></li>                        
+                             </ul>
+                             </li>
+                              <!-- Articulos -->
+                            <li id="recurso_categorias" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-reorder"></i>
+                            <span>Articulos</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="<?php echo BASE_URL ?>admin/articulos"
+                             title="listar">
+                             <span>listar</span></a></li>
+                             <li><a href="<?php echo BASE_URL ?>admin/articulos/create"                                    title="agregar">                                    <span>agregar</span></a></li>                        
+                             </ul>
+                             </li>
                              <li id="recurso_menu" class="treeview ">
                                 <a href="#">
                                     <i class="fa fa-sitemap"></i>
