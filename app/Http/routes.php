@@ -59,7 +59,31 @@ Route::group(['prefix'=>'admin'], function () {
 'uses' =>'ArticulosController@destroy',
 'as' =>'admin.articulos.destroy'
     	]);
+
+        Route::post('articulos/up', [
+'uses' =>'ArticulosController@up',
+'as' =>'admin.articulos.up'
+        ]);
 	
 
 	});
 
+
+//-----------------Archivos guardados en el storage
+Route::get('storage/{archivo}', function ($archivo) {
+     $public_path = public_path();
+     $url = $public_path.'/storage/'.$archivo;
+     //echo $url."<br>";
+      //$contents = Storage::disk('local')->get($archivo);
+      //$url = Storage::url($archivo);
+       //echo $url."<br>";
+       //echo $contents;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::exists($archivo))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(400);
+ 
+});

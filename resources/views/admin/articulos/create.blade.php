@@ -209,6 +209,70 @@ $(form).find('input, textarea, button, select').removeAttr("disabled");
     }
 
 
+
+////////-------------------para ajax
+
+
+$.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
+        }
+    });
+ 
+ function GuardarElemento(){
+ 
+        // Guardamos el elemento Form en una variable (Rendimiento!!)
+        var $form = $(this);
+        // Guardamos el elemento Input en una variable (Rendimiento!!)
+        var $images = $("#images");
+ 
+        // Cogemos los atributos del form
+        var method = $form.attr("method");
+        var url = $form.attr("action");
+ 
+        // Cogemos las files del input
+        var files = $images[0].files;
+ 
+        // Creamos el objeto formData
+        var formData = new FormData();
+ 
+        // Recorremos las files del input
+        for (var i = 0; i < files.length; i++) { var file = files[i]; 
+        	// Si no es una imagen se salta 
+        	if (!file.type.match("image.*")) { continue; } 
+        	// Si es una imagen la guardamos para mandarla a laravel 
+        	formData.append("images[]", file, file.name); } 
+        	// Un ajax de toa la vida 
+        	$.ajax({ 
+        		url : url, 
+        		// Ruta 
+        		type: method, 
+        		// mMtodo 
+        		data : formData, 
+        		// Imagenes 
+        		cache: false, 
+        		// 0 Cache para que no pete nada (La cache es el mal) 
+        		contentType: false, 
+        		// Nos la suda el 
+        		contentType processData: false, 
+        		// No queremos procesar los datos 
+        		// Si lo has hecho bien, (que yo si lo he hecho bien...).. 
+        		success:function(data) { 
+        			// Taraaaaaaa...!!! imprimirmos el dd(); 
+        			$("#resultado").html(data) }, 
+        			// Si lo has hecho mal!!....... 
+        			error: function(data) { 
+        				// Buscate la vida para controlar el error y dar un buen servicio 
+        				console.log(data); 
+        			} 
+        		});
+      }
+        				
+
+        				 	
+        				 </script>
+
+
 </script>
 
 
@@ -268,7 +332,7 @@ $(form).find('input, textarea, button, select').removeAttr("disabled");
 					<!--                    *************** COntenido *******************         -->	
 					
 
-					{!! Form::open(['url' => 'admin/articulos','method' => 'post', 'files' => true,'class' => 'bordered-row','id' => 'formulario','name' => 'formulario','role' => 'form']) !!}
+					{!! Form::open(['url' => 'admin/articulos/up','method' => 'post', 'files' => true,'class' => 'bordered-row','id' => 'formulario','name' => 'formulario','role' => 'form']) !!}
 
 					<!-- <input name="_token" type="hidden" value="{{ csrf_token() }}"> -->
 
@@ -287,12 +351,15 @@ $(form).find('input, textarea, button, select').removeAttr("disabled");
 
 					<div class="form-group">
 							{!! Form::label('Imagen de nota', 'Imagen de Nota') !!}
-							{!! Form::file('image') !!}
+							{!! Form::file('image',['class' => 'required','id' => 'image']) !!}
+					</div>
+					<div class="form-group">
+							{!! Form::label('Imagen de nota', 'Imagen de Nota') !!}
+							{!! Form::file('image',['class' => 'required','id' => 'image']) !!}
 					</div>
 
-							<div class="form-group">
-							{!! Form::label('descripcion', 'Descripcion del articulo') !!}
-							{!! Form::textarea('descripcion',null,['class' => 'form-control required','id' => 'descripcion','cols'=>'50','rows'=>'4','placeholder'=>"Descripcion del articulo"]) !!}
+					<div class="form-group">
+							<button type="button" onclick="GuardarElemento()">Agregar Imagen</button>
 					</div>
 
 					

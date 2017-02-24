@@ -19,7 +19,7 @@ class CreateArticulosTable extends Migration
             $table->enum('type',['post','page'])->default('post');
             $table->string('title',400)->nullable();
             $table->string('title_url',400)->nullable(); 
-            $table->string('imagen',255)->nullable();        
+            //$table->string('imagen',255)->nullable();        
             $table->string('descripcion',255)->nullable(); 
             $table->string('meta_keywords',255)->nullable();  
             $table->text('content');
@@ -39,7 +39,7 @@ class CreateArticulosTable extends Migration
         $articulo->title="post";
         $articulo->title="Noticia de ultima hora";
         $articulo->title_url="noticia-de-ultima-hora";
-        $articulo->imagen=NULL;
+       // $articulo->imagen=NULL;
         $articulo->descripcion="esta es una noticia muy buena";
         $articulo->meta_keywords="ultima,rpp,peruanos";
         $articulo->content="conteido d e la noticia";

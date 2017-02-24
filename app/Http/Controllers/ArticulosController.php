@@ -98,6 +98,31 @@ class ArticulosController extends Controller
         //
     }
 
+
+ /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function up(Request $request)
+    {
+        //obtenemos el campo file definido en el formulario
+       $file = $request->file('image');
+ 
+       //obtenemos el nombre del archivo
+       $nombre = $file->getClientOriginalName();
+ 
+       //indicamos que queremos guardar un nuevo archivo en el disco local
+       \Storage::disk('local')->put($nombre,  \File::get($file));
+ 
+       return "archivo guardado";
+        var_dump($request->all());
+    }
+
+
+
     /**
      * Remove the specified resource from storage.
      *
